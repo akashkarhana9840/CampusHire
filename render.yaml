@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: campushire-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: NODE_ENV
+        value: production
+    rootDir: server
+    healthCheckPath: /api/health
+    # Free tier settings (optional)
+    plan: free
+    autoDeploy: true
