@@ -43,6 +43,7 @@ for (const key of requiredEnv) {
       // WARNING: This will DELETE ALL existing data in the target database!
       await Promise.all([
   
+        User.deleteMany({}),
         Profile.deleteMany({}),
         Job.deleteMany({}),
         Application.deleteMany({}),
@@ -94,6 +95,7 @@ for (const key of requiredEnv) {
         email,
         passwordHash: hashedDemoPassword,
         role: 'student',
+        collegeId: `COLLEGE${i}`,
         isActive: true,
       });
       const branch = branches[Math.floor(Math.random() * branches.length)];

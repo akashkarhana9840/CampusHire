@@ -27,6 +27,7 @@ const RecruiterDashboard = () => {
     );
   }
 
+  const [jobs, setJobs] = useState([]);
   const [notices, setNotices] = useState([]);
   const [applicantStats, setApplicantStats] = useState({
     totalApplicants: 0,
